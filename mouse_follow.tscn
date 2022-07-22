@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://wcydw7xxq4p7"]
+
+[ext_resource type="Script" path="res://mouseFollow.gd" id="1_5nbrh"]
+
+[node name="mouseFollow" type="RayCast3D"]
+target_position = Vector3(0, 0, -100)
+collision_mask = 2
+collide_with_areas = true
+script = ExtResource("1_5nbrh")

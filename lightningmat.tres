@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b6ds5jdjd7ved"]
+
+[ext_resource type="Shader" path="res://lightning_cloud.gdshader" id="1_25wc7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bg1ky"]
+render_priority = 0
+shader = ExtResource("1_25wc7")
+shader_param/boltLocation = null
+shader_param/boltSize = null
+shader_param/lightningColor = Color(0.56, 0.51716, 0.2744, 1)
+shader_param/scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uda6g"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_bg1ky")
+shader = ExtResource("1_25wc7")
+shader_param/boltLocation = null
+shader_param/boltSize = null
+shader_param/lightningColor = Color(0.35, 0.1015, 0.163625, 1)
+shader_param/scale = 1.0
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_uda6g")
+shader = ExtResource("1_25wc7")
+shader_param/boltLocation = null
+shader_param/boltSize = null
+shader_param/lightningColor = Color(0.4, 0.87451, 0.886275, 1)
+shader_param/scale = 1.0
