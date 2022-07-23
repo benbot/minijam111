@@ -68,7 +68,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ftfkc")
 
-[sub_resource type="Shader" id="Shader_5p3u8"]
+[sub_resource type="Shader" id="Shader_5rbw8"]
 code = "shader_type spatial;
 render_mode cull_back;
 
@@ -92,15 +92,15 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c2a4r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gc0q"]
 render_priority = 0
-shader = SubResource("Shader_5p3u8")
+shader = SubResource("Shader_5rbw8")
 shader_param/boltLocation = Vector3(-0.302, 0.112, 0)
 shader_param/boltSize = 0.482
 shader_param/lightningColor = Color(0.56, 0.51716, 0.2744, 1)
 shader_param/scale = 1.0
 
-[sub_resource type="Shader" id="Shader_q4rt4"]
+[sub_resource type="Shader" id="Shader_4e6gm"]
 code = "shader_type spatial;
 render_mode cull_back;
 
@@ -124,16 +124,16 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ae6f3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rknab"]
 render_priority = 0
-next_pass = SubResource("ShaderMaterial_c2a4r")
-shader = SubResource("Shader_q4rt4")
+next_pass = SubResource("ShaderMaterial_0gc0q")
+shader = SubResource("Shader_4e6gm")
 shader_param/boltLocation = Vector3(-0.112, 0.478, 0)
 shader_param/boltSize = 0.696
 shader_param/lightningColor = Color(0.35, 0.1015, 0.163625, 1)
 shader_param/scale = 1.0
 
-[sub_resource type="Shader" id="Shader_xn82a"]
+[sub_resource type="Shader" id="Shader_c716m"]
 code = "shader_type spatial;
 render_mode cull_back;
 
@@ -157,16 +157,16 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d4ak5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pyj8x"]
 render_priority = 0
-next_pass = SubResource("ShaderMaterial_ae6f3")
-shader = SubResource("Shader_xn82a")
+next_pass = SubResource("ShaderMaterial_rknab")
+shader = SubResource("Shader_c716m")
 shader_param/boltLocation = Vector3(0.352, 0.054, -0.046)
 shader_param/boltSize = 0.368
 shader_param/lightningColor = Color(0.4, 0.87451, 0.886275, 1)
 shader_param/scale = 1.0
 
-[sub_resource type="Shader" id="Shader_sfbws"]
+[sub_resource type="Shader" id="Shader_mkaks"]
 code = "shader_type spatial;
 uniform vec4 color : source_color;
 
@@ -175,10 +175,10 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2itho"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53taa"]
 render_priority = 0
-next_pass = SubResource("ShaderMaterial_d4ak5")
-shader = SubResource("Shader_sfbws")
+next_pass = SubResource("ShaderMaterial_pyj8x")
+shader = SubResource("Shader_mkaks")
 shader_param/color = Color(0.741176, 0.741176, 0.741176, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fmqyi"]
@@ -196,7 +196,7 @@ yellowLightningPos = Vector3(-0.302, 0.112, 0)
 
 [node name="Sphere" parent="cloud" index="0"]
 mesh = SubResource("ArrayMesh_r7g8k")
-surface_material_override/0 = SubResource("ShaderMaterial_2itho")
+surface_material_override/0 = SubResource("ShaderMaterial_53taa")
 
 [node name="area" type="Area3D" parent="." groups=["clouds"]]
 collision_layer = 2
