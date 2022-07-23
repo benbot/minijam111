@@ -3,10 +3,16 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var clouds := get_tree().get_nodes_in_group("clouds")
+	var flowers := get_tree().get_nodes_in_group("flowers")
 	for c in clouds:
 		c.input_event.connect(thing(c))
+	for f in flowers:
+		f.body_entered.connect(_on_flower_hit(f))
+	
 
-
+func _on_flower_hit(flower: Node3D):
+	return func (body):
+		print("Hello")
 
 const rainbow_scene = preload("res://rainbow.tscn")
 func thing(cloud: Node3D) -> Callable:

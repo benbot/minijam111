@@ -1,14 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://04l51vn0mk0x"]
+[gd_scene load_steps=5 format=3 uid="uid://04l51vn0mk0x"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6aeud"]
 [ext_resource type="PackedScene" uid="uid://ygy38qa8jew3" path="res://cloud.tscn" id="1_xh6kj"]
 [ext_resource type="PackedScene" uid="uid://db1ywrp6gqwq" path="res://carosel.tscn" id="3_pjkgy"]
 
-[sub_resource type="Sky" id="Sky_m7o0t"]
-
 [sub_resource type="Environment" id="Environment_7ovk3"]
-background_mode = 2
-sky = SubResource("Sky_m7o0t")
+background_mode = 1
+background_color = Color(0.157194, 0.406663, 0.87, 1)
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 glow_enabled = true

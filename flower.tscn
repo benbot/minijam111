@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ejxpri78jebl"]
+
+[ext_resource type="Texture2D" uid="uid://dxjp0w1gr86lp" path="res://icon.png" id="1_airlo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0b1wx"]
+
+[node name="flower" type="Area3D" groups=["flowers"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.44321, 0, 0, 0, 0.44321, 0, 0, 0, 0.44321, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b1wx")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_airlo")
