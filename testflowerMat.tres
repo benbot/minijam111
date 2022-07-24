@@ -1,0 +1,29 @@
+[gd_resource type="StandardMaterial3D" load_steps=8 format=3 uid="uid://bleltd4mg5660"]
+
+[ext_resource type="Texture2D" uid="uid://dwn4mv6s64n05" path="res://textures/flowerUV.png" id="1_r4veb"]
+[ext_resource type="Shader" path="res://flower.gdshader" id="2_jp634"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gns4m"]
+
+[sub_resource type="NoiseTexture" id="NoiseTexture_15ap5"]
+noise = SubResource("FastNoiseLite_gns4m")
+
+[sub_resource type="Gradient" id="Gradient_h08vq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5yp2o"]
+gradient = SubResource("Gradient_h08vq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wq17j"]
+render_priority = 0
+shader = ExtResource("2_jp634")
+shader_param/noise = SubResource("NoiseTexture_15ap5")
+shader_param/ramp = SubResource("GradientTexture2D_5yp2o")
+shader_param/threshhold = 0.5
+
+[resource]
+resource_name = "UVMaterial"
+next_pass = SubResource("ShaderMaterial_wq17j")
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_r4veb")
+roughness = 0.9

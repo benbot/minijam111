@@ -12,6 +12,9 @@ func _ready():
 
 func _on_flower_hit(flower: Node3D):
 	return func (body: RigidDynamicBody3D):
+		flower.color_fill = 2;
+		if flower.has_method("update_materials"):
+			flower.update_materials()
 		body.queue_free()
 
 const rainbow_scene = preload("res://rainbow.tscn")
@@ -22,6 +25,7 @@ func thing(cloud: Node3D) -> Callable:
 				var rainbow = rainbow_scene.instantiate()
 				add_child(rainbow)
 				rainbow.global_transform.origin = cloud.global_transform.origin
+				rainbow.scale = Vector3(0.3, 0.3, 0.3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
