@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ejxpri78jebl"]
+[gd_scene load_steps=4 format=3 uid="uid://ejxpri78jebl"]
 
 [ext_resource type="Texture2D" uid="uid://dxjp0w1gr86lp" path="res://icon.png" id="1_airlo"]
+[ext_resource type="PackedScene" uid="uid://dfrmrakdygvy" path="res://flower.blend" id="2_e16ug"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0b1wx"]
 
@@ -11,4 +12,8 @@ transform = Transform3D(0.44321, 0, 0, 0, 0.44321, 0, 0, 0, 0.44321, 0, 0, 0)
 shape = SubResource("BoxShape3D_0b1wx")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
 texture = ExtResource("1_airlo")
+
+[node name="flower" parent="." instance=ExtResource("2_e16ug")]
+transform = Transform3D(0.018, 0, 0, 0, 0.018, 0, 0, 0, 0.018, 0, -0.210606, 0)

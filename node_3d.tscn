@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://04l51vn0mk0x"]
+[gd_scene load_steps=6 format=3 uid="uid://04l51vn0mk0x"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6aeud"]
 [ext_resource type="PackedScene" uid="uid://ygy38qa8jew3" path="res://cloud.tscn" id="1_xh6kj"]
 [ext_resource type="PackedScene" uid="uid://db1ywrp6gqwq" path="res://carosel.tscn" id="3_pjkgy"]
+[ext_resource type="AudioStream" uid="uid://lev1vbf6remr" path="res://hhhh 2022-07-23 2231.wav" id="4_8vt8n"]
 
 [sub_resource type="Environment" id="Environment_7ovk3"]
 background_mode = 1
@@ -48,5 +49,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87177, 2.03, 0)
 
 [node name="carosel" parent="." instance=ExtResource("3_pjkgy")]
 transform = Transform3D(1.245, 0, 0, 0, 1.245, 0, 0, 0, 1.245, 0, -1.541, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8vt8n")
+volume_db = -3.0
+autoplay = true
 
 [editable path="carosel"]

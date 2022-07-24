@@ -11,8 +11,8 @@ func _ready():
 	
 
 func _on_flower_hit(flower: Node3D):
-	return func (body):
-		print("Hello")
+	return func (body: RigidDynamicBody3D):
+		body.queue_free()
 
 const rainbow_scene = preload("res://rainbow.tscn")
 func thing(cloud: Node3D) -> Callable:
@@ -20,7 +20,8 @@ func thing(cloud: Node3D) -> Callable:
 		if input is InputEventMouseButton:
 			if input.button_index == MOUSE_BUTTON_LEFT and input.pressed:
 				var rainbow = rainbow_scene.instantiate()
-				cloud.add_child(rainbow)
+				add_child(rainbow)
+				rainbow.global_transform.origin = cloud.global_transform.origin
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

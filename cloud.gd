@@ -25,9 +25,6 @@ func _ready():
 	yellow = red.next_pass
 	sphere.set_surface_override_material(0, mesh)
 
-var size := 0.0
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	blue.set_shader_param("scale", scale.x)
 	red.set_shader_param("scale", scale.x)
 	yellow.set_shader_param("scale", scale.x)
@@ -39,7 +36,3 @@ func _process(delta):
 	blue.set_shader_param("boltLocation", blueLightningPos)
 	red.set_shader_param("boltLocation", redLightningPos)
 	yellow.set_shader_param("boltLocation", yellowLightningPos)
-
-	size += delta * 0.2
-	if size > 5.0:
-		size = 0.0
