@@ -8,11 +8,16 @@ func _ready():
 		c.input_event.connect(thing(c))
 	for f in flowers:
 		f.body_entered.connect(_on_flower_hit(f))
-	
+		f.get_node("canseeme").screen_exited.connect(_on_flower_screen_exit(f))
+
+func _on_flower_screen_exit(flower: Node3D):
+	return func():
+		if flower.color_fill >= 1:
+			flower.queue_free()
 
 func _on_flower_hit(flower: Node3D):
 	return func (body: RigidDynamicBody3D):
-		flower.color_fill = 2;
+		flower.color_fill += 0.25;
 		if flower.has_method("update_materials"):
 			flower.update_materials()
 		body.queue_free()
@@ -25,9 +30,12 @@ func thing(cloud: Node3D) -> Callable:
 				var rainbow = rainbow_scene.instantiate()
 				add_child(rainbow)
 				rainbow.global_transform.origin = cloud.global_transform.origin
-				rainbow.scale = Vector3(0.3, 0.3, 0.3)
+				rainbow.scale = Vector3(0.04, 0.04, 0.04)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if len(get_tree().get_nodes_in_group("flowers")) < 1:
+		var win: AudioStreamPlayer = $youwin
+		win.play()
+		print("you win")
